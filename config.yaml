@@ -1,0 +1,22 @@
+ifaces:
+  wlan0:
+    freq: 5432
+    tx_power: 30
+
+channels:
+  video:
+    tx:
+      iface: wlan0
+      k: 2
+      p: 4
+      port: 5600
+      id: 34445
+    rx:
+      iface: wlan0
+      k: 2
+      p: 4
+      port: 5800
+      id: 34445
+  thermal:
+    command: wfb_tx -k 3 -p 4 wlan0 5777
+

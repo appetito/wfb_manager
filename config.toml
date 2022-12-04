@@ -1,0 +1,29 @@
+[server]
+log_level = "DEBUG"
+
+
+[[ifaces]]
+name = "wlan0"
+freq = 5432
+tx_power = 30
+
+
+[channels.video.tx]
+iface = "wlan0"
+k = 2
+p = 4
+port = 5600
+link_id = 34445
+
+[channels.video.rx]
+iface = "wlan0"
+k = 2
+p = 4
+port = 5700
+link_id = 34445
+
+[channels.thermal.tx]
+command = "wfb_tx -k 3 -p 4 wlan0 5777"
+
+[processes.camera]
+command = "gst-launch-1.0 src mmal"
